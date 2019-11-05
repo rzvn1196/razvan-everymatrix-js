@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+<!-- Creaza un document HTML in care exista un formular cu un camp de input in care utilizatorul poate ghici numarul pe care l-a gandit calculatorul.
+
+Daca numarul este mai mare decat cel generat, afiseaza o alerta cu "Mai mare" si analog pentru numere mai mici. Cand numarul este egal cu cel prezentat afiseaza o alerta cu "Ai ghicit numarul" si resteaza jocul.
+
+Math.ceil(Math.random() * 10) -->
+
+<h1>Guess The Number</h1>
+<p>Ghiceste numarul generat de calculator dintre 0 si 100</p>
+
+<form class ="guessing-game">
+<fieldset>
+  <legend=>Guessing Game</legend>
+  <label for="number"></label>
+  <input id="number" type="text" id="number" placeholder="Ghiceste numarul">
+  <button type="submit" id="submit">Am ghicit?</button>
+</fieldset>
+</form>
+
+<script src="app.js"></script>
+</body>
+</html>

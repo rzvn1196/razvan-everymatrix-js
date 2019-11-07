@@ -5,8 +5,10 @@
 // Math.ceil(Math.random() * 10)
 
 var inputElement = document.getElementById('number'),
- secretNumber = Math.ceil(Math.random() * 10),
- form = document.querySelector('.guessing-game');
+ secretNumber = Math.ceil(Math.random() * 100),
+ form = document.querySelector('.guessing-game'),
+ triesElement = document.getElementById('last-tries'),
+ guesses = 0;
 
 console.log(secretNumber);
 
@@ -21,10 +23,24 @@ form.addEventListener('submit', function(e) {
   
   if (guessedNumber < secretNumber ) {
     alert('Numarul este mai mare!');
+    guesses++;
   }
   
   if (guessedNumber > secretNumber) {
     alert('Numarul este mai mic');
+    guesses++;
+  }
+
+  // triesElement.value = guesses;
+
+  // triesElement.value += guessedNumber ;
+
+  if (
+    triesElement.value.trim() === ''
+  ) {
+    triesElement.value += guessedNumber;
+  } else {
+    triesElement.value += ', ' + guessedNumber;
   }
 
   e.preventDefault();

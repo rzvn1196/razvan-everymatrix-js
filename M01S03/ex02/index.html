@@ -7,7 +7,61 @@
   <body>
 
     <script>
+      var person = {
+        name: 'Razvan',
+        surname: 'Serban',
+        age: '23',
+        petOwner: false,
+        skills: {
+          html: true,
+          css: true,
+          javaScript: true,
+        },
+        friends: {
+          larry: {
+            name: 'Larry',
+            surname: 'Cumpanasu',
+            age: '32',
+          },
+          steven: {
+            name: 'Steven',
+            surname: 'Iohannis',
+            age: '40',
+          },
+          carol: {
+            name: 'Carol',
+            surname: 'Dancila',
+            age: '12',
+          }
+        }
+      };
 
+  console.log(person.friends.carol.age);
+  console.log(2019-person.friends.larry.age);
+  console.log(`${person.friends.steven.name} este cu ${person.friends.steven.age - person.friends.larry.age} de ani mai mare decat ${person.friends.larry.name}.`);
+  console.log(`Prietenul meu ${person.friends.steven.name} ${person.friends.steven.surname} are ${person.friends.steven.age} de ani.`);
+  console.log(`Prietenii mei sunt: ${person.friends.steven.name}, ${person.friends.carol.name} si ${person.friends.larry.name}.`);
+  console.log(`Numele de familie al lui Steven este compus din ${(person.friends.steven.surname).length} litere.`);
+  console.log(person.friends.steven.surname.length);
+  console.log("----------------------------------------------------------------------");
+  console.log(person.friends.carol.age);
+  console.log(`${person.friends.steven.name} este nascut in anul ${2019 - person.friends.steven.age} iar ${person.friends.carol.name} este nascut in anul ${2019 - person.friends.carol.age}.`);
+  console.log(`${person.friends.steven.name} este cu ${person.friends.steven.age - person.friends.carol.age} ani mai mare decat ${person.friends.carol.name}.`);
+  console.log(`Prietena mea ${person.friends.carol.name} ${person.friends.carol.surname} are ${person.friends.carol.age} ani.`);
+  console.log(`Prietenii mei sunt: ${person.friends.steven.name}, ${person.friends.carol.name} si ${person.friends.larry.name}.`);
+  console.log(person.friends.larry.surname.length);
+  console.log((person.friends.steven.name.length) - (person.friends.carol.name.length));
     </script>
+
+  <!--
+Afiseaza varsta prietenei Carol 
+Folosind anul curent calculeaza si afiseaza anul de nastere al lui Steven, apoi al lui Carol.
+Calculeaza diferenta si afiseaza propozitia: “Steven este cu xx ani mai mare decat Carol.” folosind proprietatile name.
+Afiseaza propozitia: “Prietena mea Carol Carolson are xx ani.” folosind doar proprietatile.
+Afiseaza propozitia: “Prietenii mei sunt: Larry, Carol si Steven.”.
+Afiseaza numarul de caractere al numelui de familie al lui Larry
+Calculeaza diferenta dintre numarul de caractere al numelor lui Steven si Carol.
+
+-->
   </body>
 </html>

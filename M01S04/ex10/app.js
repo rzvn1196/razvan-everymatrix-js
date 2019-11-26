@@ -56,3 +56,22 @@ person.friends.forEach(function(friend, i, friendsArray) {
   }
 });
 console.log(sentence + '.');
+
+console.warn(`Folosind forEach, afiseaza suma anilor de nastere a persoanelor care au varsta impara.`);
+let sum = 0;
+person.friends.forEach(function(friend) {
+  sum += (new Date()).getFullYear() - friend.age;
+});
+console.log(sum);
+
+console.warn(`Afiseaza diferenta de varsta dintre persoana si prietenii din arrayul friends daca aceasta este mai mare sau egala cu 2 ani.`)
+person.friends.forEach(function(friend) {
+  let dif = person.age - friend.age;
+  console.log(dif);
+})
+
+
+console.warn(` Folosind metoda reverse si apoi forEach, afiseaza in ordine inversa elementele arrayului skills.`);
+person.friends.reverse().forEach(function(friend) {
+  console.log(`${friend.name} ${friend.surname}`);
+});

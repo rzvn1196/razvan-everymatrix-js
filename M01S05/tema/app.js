@@ -41,4 +41,4 @@ let pet = {
   },
 };
 
-console.log(`${pet.getName()} este ${pet.getSpecies()} si are ${pet.getAge} de ani.`);
+console.log(`${pet.getName()} este ${pet.getSpecies()} si are ${pet.getAge()} de ani.`);

@@ -108,6 +108,8 @@ addPetButton.addEventListener('click', () => {
   }
   
   petNameInput.value = '';
+  petAgeInput.value = '';
+  petSpeciesInput.value = '';
 })
 
 petSwitch.addEventListener('change', (evt) => {

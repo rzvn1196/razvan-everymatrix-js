@@ -6,6 +6,7 @@ import {
   Route
 } from 'react-router-dom';
 import { Home } from './Pages/Home/Home';
+import { Person } from './Pages/Person/Person';
 
 export class App extends Component {
   constructor(props) {
@@ -14,8 +15,26 @@ export class App extends Component {
     this.state = {
       name: 'Dragos',
       surname: 'Iordache',
-
+      newName: ''
     };
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleChange(evt) {
+    this.setState({
+      newName: evt.target.value
+    });
+  }
+
+  handleSubmit(evt) {
+    this.setState({
+      name: this.state.newName,
+      newName:''
+    });
+    
+    evt.preventDefault();
   }
 
   render() {
@@ -25,9 +44,13 @@ export class App extends Component {
           <ul>
             <li>
               <Link to="/">Home</Link>
+
             </li>
             <li>
               <Link to="/about">About</Link>
+            </li>
+            <li>
+              <Link to="/person">Person</Link>
             </li>
           </ul>
         </nav>
@@ -36,10 +59,22 @@ export class App extends Component {
         <Switch>
           <Route exact path ="/">
             <h1>Home</h1>
-            <Home name="Razvan"></Home>
+            <Home name={this.state.name}>Martor</Home>
+            <form onSubmit={this.handleSubmit}>
+                <input placeholder="Nume"
+                  name="newName"
+                  value={this.state.newName}
+                  onChange={this.handleChange}
+                ></input>
+              </form>
           </Route>
           <Route path ="/about">
             <h1>About</h1>
+            
+          </Route>
+          <Route path ="/person">
+            
+            <Person></Person>
           </Route>
         </Switch>
       </Router>
